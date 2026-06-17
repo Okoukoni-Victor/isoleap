@@ -3,7 +3,7 @@ import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ScrollToTopButton from "@/components/layout/ScrollToTopButton";
+import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
 
 const fraunces = Fraunces({
   subsets: ["latin"],

@@ -28,7 +28,7 @@ export default function TrustStripSection() {
     >
       <div className="max-w-6xl mx-auto px-5 md:px-10 lg:px-20 py-10">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-          <h2 className="tracking-[11%] font-body uppercase text-[11.5px] font-semibold">
+          <h2 className="tracking-[11%] text-[11.5px] font-body uppercase font-semibold">
             Trusted by teams in
           </h2>
 
@@ -38,13 +38,13 @@ export default function TrustStripSection() {
             className="hidden md:block flex-shrink-0 w-px h-4 bg-grey-300"
           />
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             {sectors.map((sector) => (
               <span
                 key={sector}
-                className="cursor-default select-none inline-flex justify-center items-center border
-                  border-green-200 rounded-full px-3.5 py-[5px] bg-green-50 text-[13px] font-semibold
-                  text-green-700"
+                className="select-none inline-flex justify-center items-center border
+                  border-green-200 rounded-full px-3.5 py-[5px] bg-green-50 text-[13px]
+                  font-semibold text-green-700"
               >
                 {sector}
               </span>
@@ -61,8 +61,8 @@ export default function TrustStripSection() {
               {[...partnerLogos, ...partnerLogos].map((logo, i) => (
                 <div
                   key={i}
-                  className="overflow-hidden relative flex flex-shrink-0 justify-center items-center
-                    w-36 h-9 mx-3"
+                  className="overflow-hidden relative flex flex-shrink-0 justify-center
+                    items-center w-36 h-9 mx-3"
                 >
                   <Image
                     src={logo.src}

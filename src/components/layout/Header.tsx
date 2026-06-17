@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -27,12 +28,22 @@ export default function Navbar() {
     <header className="z-fixed fixed inset-x-0 top-0">
       <nav
         aria-label="Main navigation"
-        className="flex justify-between items-center h-[72px] mx-[2vw] mt-4 border
-          border-black/20 rounded-full px-4 bg-white/20 backdrop-blur-[15px]
-          backdrop-saturate-[180%]"
+        className="flex justify-between items-center h-[56px] md:h-[64px] lg:h-[72px]
+          mx-[2vw] mt-4 border border-black/20 rounded-full px-4 bg-white/20
+          backdrop-blur-[15px] backdrop-saturate-[180%]"
       >
-        <Link href="#home" aria-label="Go to homepage" className="select-none">
-          Isoleap
+        <Link
+          href="#home"
+          aria-label="Isoleap homepage"
+          className="select-none relative w-[116px] h-[29px]"
+        >
+          <Image
+            src="/logos/Isoleap.svg"
+            alt="Isoleap logo"
+            fill
+            sizes="116px"
+            className="object-contain"
+          />
         </Link>
 
         {/* Desktop links */}
@@ -57,8 +68,8 @@ export default function Navbar() {
         <Link
           href="#cta"
           className="select-none hidden lg:inline-flex justify-center items-center
-            rounded-full px-6 py-3 bg-amber-500 text-sm font-semibold transition-all
-            duration-150 hover:bg-amber-600"
+            rounded-full px-6 py-3 bg-amber-500 text-sm md:text-[15px] font-semibold
+            transition-all duration-150 hover:bg-amber-600"
         >
           Talk to Us
         </Link>
@@ -72,7 +83,7 @@ export default function Navbar() {
           aria-controls="mobile-drawer"
           className="inline-flex lg:hidden justify-center items-center"
         >
-          <Menu size={30} />
+          <Menu size={25} />
         </button>
       </nav>
 
@@ -103,11 +114,11 @@ export default function Navbar() {
           type="button"
           onClick={() => setDrawerOpen(false)}
           aria-label="Close navigation menu"
-          className="select-none shrink-0 self-end inline-flex justify-center items-center
+          className="shrink-0 self-end inline-flex justify-center items-center
             me-6 rounded-full p-1.5 bg-white/[0.08] text-white/60 transition-colors
             duration-150 hover:bg-white/[0.14] hover:text-white"
         >
-          <X size={30} />
+          <X size={25} />
         </button>
 
         <nav
@@ -123,7 +134,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setDrawerOpen(false)}
-                  className="select-none capitalize font-medium text-grey-400
+                  className="select-none text-sm capitalize font-medium text-grey-400
                     transition-colors duration-150 hover:text-amber-500"
                 >
                   {link.label}
@@ -136,8 +147,8 @@ export default function Navbar() {
             href="#cta"
             onClick={() => setDrawerOpen(false)}
             className="select-none inline-flex justify-center items-center mx-6 md:mx-12
-              rounded-full px-6 py-3 bg-amber-500 font-semibold text-green-900
-              transition-colors duration-150 hover:bg-amber-400"
+              rounded-full px-6 py-3 bg-amber-500 text-sm md:text-[15px] font-semibold
+              text-green-900 transition-colors duration-150 hover:bg-amber-600"
           >
             Talk to Us
           </Link>
