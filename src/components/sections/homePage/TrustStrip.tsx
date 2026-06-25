@@ -68,7 +68,7 @@ export default function TrustStripSection() {
                     src={logo.src}
                     alt={logo.name}
                     fill
-                    sizes="100%"
+                    sizes="144px"
                     className={`object-contain ${logo.scale} select-none`}
                   />
                 </div>

@@ -10,7 +10,7 @@ const companyNavLinks = [
   { label: "About", href: "#about" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Why Isoleap", href: "#why-isoleap" },
-  { label: "Our Heritage", href: "#our-heritage" },
+  { label: "Our Heritage", href: "#heritage" },
   { label: "Sectors", href: "#sectors" },
 ];
 
@@ -43,7 +43,7 @@ export default function Footer() {
               Skills that move organizations forward.
             </p>
 
-            <p className="text-amber-200">
+            <p className="text-amber-200/80">
               A digital and AI skills training company, powered by the
               instructional expertise of Tech4Dev.
             </p>
@@ -52,7 +52,7 @@ export default function Footer() {
           <nav aria-labelledby="companyNavigationHeading">
             <h4
               id="companyNavigationHeading"
-              className="mb-5 text-xs font-body uppercase font-semibold text-amber-400"
+              className="mb-5 text-xs font-body uppercase font-semibold text-amber-400/80"
             >
               Company
             </h4>
@@ -73,7 +73,7 @@ export default function Footer() {
           </nav>
 
           <div>
-            <h4 className="mb-5 text-xs font-body uppercase font-semibold text-amber-400">
+            <h4 className="mb-5 text-xs font-body uppercase font-semibold text-amber-400/80">
               Connect with us
             </h4>
 

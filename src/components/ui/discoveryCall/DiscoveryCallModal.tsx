@@ -38,24 +38,29 @@ export default function DiscoveryCallModal({
 
   const handleClose = () => {
     onClose();
-    setTimeout(() => {
-      setFields(EMPTY);
-      setErrors({});
-      setStatus("idle");
-    }, 300);
+
+    setFields(EMPTY);
+    setErrors({});
+    setStatus("idle");
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const errs = validate(fields);
+
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
+
       document
         .getElementById(Object.keys(errs)[0])
         ?.scrollIntoView({ behavior: "smooth", block: "center" });
+
       return;
     }
+
     setStatus("submitting");
+
     try {
       const res = await fetch("/", {
         method: "POST",
@@ -72,6 +77,7 @@ export default function DiscoveryCallModal({
           referral: fields.referral,
         }),
       });
+
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus("success");
     } catch (err) {
@@ -107,19 +113,21 @@ export default function DiscoveryCallModal({
                 <X size={15} strokeWidth={2} />
               </button>
 
-              <div>
-                <DialogTitle
-                  className="leading-snug tracking-[-0.02em] text-[22px] font-display
-                    font-semibold text-amber-500"
-                >
-                  Book a discovery call
-                </DialogTitle>
+              {status !== "success" && (
+                <div className="self-center flex flex-col items-center">
+                  <DialogTitle
+                    className="text-center leading-snug tracking-[-0.02em] text-[22px]
+                    font-display font-semibold text-amber-500"
+                  >
+                    Book a discovery call
+                  </DialogTitle>
 
-                <Description className="mt-1 text-[13px] font-medium text-grey-600">
-                  45 minutes &middot; No commitment &middot; We respond within
-                  48 hours
-                </Description>
-              </div>
+                  <Description className="mt-1 text-center text-[13px] font-medium text-grey-600">
+                    45 minutes &middot; No commitment &middot; We respond within
+                    48 hours
+                  </Description>
+                </div>
+              )}
             </div>
 
             <div className="px-8 py-7">

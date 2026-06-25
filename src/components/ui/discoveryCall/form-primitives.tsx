@@ -24,7 +24,7 @@ export function FieldLabel({
   return (
     <label
       htmlFor={htmlFor}
-      className="block mb-1.5 text-[13px] font-semibold text-grey-600"
+      className="block w-fit mb-1.5 text-[13px] font-semibold text-grey-600"
     >
       {children}
 
@@ -87,7 +87,7 @@ export function SelectField({
 }) {
   return (
     <Field>
-      <Label className="block mb-1.5 text-[13px] font-semibold text-grey-600">
+      <Label className="block w-fit mb-1.5 text-[13px] font-semibold text-grey-600">
         {label}
 
         {required && (

@@ -22,7 +22,7 @@ interface DiscoveryFormProps {
   errors: FormErrors;
   status: FormStatus;
   setField: (key: keyof FormFields, value: string) => void;
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit: (e: React.SyntheticEvent<HTMLFormElement>) => void;
 }
 
 export default function DiscoveryCallForm({
@@ -35,6 +35,7 @@ export default function DiscoveryCallForm({
   return (
     <form
       name="discovery-call"
+      method="POST"
       data-netlify="true"
       onSubmit={onSubmit}
       noValidate
