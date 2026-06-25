@@ -62,7 +62,7 @@ export default function DiscoveryCallModal({
     setStatus("submitting");
 
     try {
-      const res = await fetch("/", {
+      const res = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
@@ -75,6 +75,7 @@ export default function DiscoveryCallModal({
           "team-size": fields.teamSize,
           message: fields.message,
           referral: fields.referral,
+          "bot-field": "",
         }),
       });
 
