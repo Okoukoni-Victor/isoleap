@@ -37,28 +37,6 @@ export default function RootLayout({
     >
       <body>
         <Header />
-
-        {/*
-          Netlify Forms detection — this hidden form tells Netlify to register
-          the "discovery-call" form at build time. Do not remove it.
-          The actual submission happens via fetch() in DiscoveryCallModal.tsx.
-        */}
-        <form
-          name="discovery-call"
-          data-netlify="true"
-          hidden
-          aria-hidden="true"
-        >
-          <input type="text" name="full-name" />
-          <input type="email" name="work-email" />
-          <input type="text" name="organization" />
-          <input type="text" name="job-title" />
-          <input type="text" name="sector" />
-          <input type="text" name="team-size" />
-          <textarea name="message" />
-          <input type="text" name="referral" />
-        </form>
-
         {children}
         <Footer />
         <ScrollToTopButton />

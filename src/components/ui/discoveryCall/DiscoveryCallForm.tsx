@@ -41,6 +41,7 @@ export default function DiscoveryCallForm({
     >
       {/* Required by Netlify when submitting via fetch */}
       <input type="hidden" name="form-name" value="discovery-call" />
+      <input type="hidden" name="bot-field" value="" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
